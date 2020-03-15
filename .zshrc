@@ -104,6 +104,8 @@ man() {
 
 source $ZSH/oh-my-zsh.sh
 
+alias vi='nvim'
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
