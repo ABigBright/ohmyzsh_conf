@@ -136,3 +136,9 @@ alias vi='nvim'
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ -s /home/briq/.autojump/etc/profile.d/autojump.sh ]] && source /home/briq/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
