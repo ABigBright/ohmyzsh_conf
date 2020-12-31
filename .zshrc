@@ -142,3 +142,10 @@ fi
 [[ -s /home/briq/.autojump/etc/profile.d/autojump.sh ]] && source /home/briq/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
+
+if [[ $TMUX != "" ]] then
+    export TERM="screen-256color"
+else
+    export TERM="xterm-256color"
+fi
+
