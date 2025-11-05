@@ -82,6 +82,7 @@ plugins=(
   alias-finder
   autojump
   tmux
+  zsh-syntax-highlighting
 )
 
 # add by briq for customize bash environment
@@ -165,3 +166,5 @@ highlight() {
 
 alias hl='highlight'
 
+# 定义自定义高亮模式，警示危险命令
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
