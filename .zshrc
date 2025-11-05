@@ -149,3 +149,19 @@ else
     export TERM="xterm-256color"
 fi
 
+# 自定义高亮函数
+highlight() {
+    local error_color='1;31'    # 红色
+    local warning_color='1;33'  # 黄色
+    local info_color='1;36'     # 青色
+    local success_color='1;32'  # 绿色
+
+    sed -E \
+        -e "s/(error)/$(printf '\033[%sm\\1\033[0m' $error_color)/gi" \
+        -e "s/(warning)/$(printf '\033[%sm\\1\033[0m' $warning_color)/gi" \
+        -e "s/(info)/$(printf '\033[%sm\\1\033[0m' $info_color)/gi" \
+        -e "s/(success)/$(printf '\033[%sm\\1\033[0m' $success_color)/gi"
+}
+
+alias hl='highlight'
+
